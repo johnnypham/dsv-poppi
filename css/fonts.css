@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?30f3hy');
+    src:    url('fonts/icomoon.eot?30f3hy#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?30f3hy') format('truetype'),
+        url('fonts/icomoon.woff?30f3hy') format('woff'),
+        url('fonts/icomoon.svg?30f3hy#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-circle:before {
+    content: "\e90a";
+}
+.icon-arrows2:before {
+    content: "\e90b";
+}
+.icon-icon-setting:before {
+    content: "\e900";
+}
+.icon-icon-smiley:before {
+    content: "\e901";
+}
+.icon-photo:before {
+    content: "\e902";
+}
+.icon-tool:before {
+    content: "\e903";
+}
+.icon-medical:before {
+    content: "\e904";
+}
+.icon-symbols:before {
+    content: "\e905";
+}
+.icon-smiley:before {
+    content: "\e906";
+}
+.icon-interface:before {
+    content: "\e907";
+}
+.icon-arrows:before {
+    content: "\e908";
+}
+.icon-icon-notification:before {
+    content: "\e909";
+}

@@ -1,0 +1,17 @@
+#infoUser-tabs .ui-tabs-nav li{
+display: inline-block;
+	width:50%;
+	float: left;
+	background-color: #0a4a6f;
+	text-align: center;
+	padding:17px 0px;
+	border-bottom: 3px solid #0a4a6f;
+}
+#infoUser-tabs .ui-tabs-nav li a{
+	color: #fff;
+	font-size: 14px;
+
+}
+#infoUser-tabs .ui-tabs-nav .ui-tabs-active{
+	border-color: #fff;
+}

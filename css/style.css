@@ -34,11 +34,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+a:hover,a:focus,li:hover,li:active,li:focus{
+  outline: none;
+}
 a {
   text-decoration: none;
 }
 html, body, .poppi-chat {
-  height: 100%
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 .poppi-chat .header {
   display: inline-block;
@@ -108,14 +112,59 @@ html, body, .poppi-chat {
 }
 header img {
   display: inline-block;
-  width: 100px;
   float: left;
+  margin-left: 30px;
+  margin-top: 20px;
+
 }
 header ul {
   display: inline-block;
+  list-style-type: circle
 }
 header ul li {
   display: inline-block;
+  font-size: 14px;
+  padding: 0 25px;
+  line-height: 60px;
+  float: left;
+  position: relative;
+
+}
+header ul li:after{
+  content: '';
+  position: absolute;
+  width: 4px;
+  left: -4px;
+  height: 4px;
+  top:calc(50% - 2px);
+  border: 1px solid #ffffff;
+  background-color: #fff;
+  border-radius: 100%;
+}
+header ul li a {
+  color: #fff;
+}
+header ul li a number{
+  font-size: 10px;
+  color: #dfdfdf;
+  margin-left: 10px;
+}
+header ul li.me:after{
+  display: none;
+}
+header ul li.me a{
+  background: #084365;
+  border-radius: 4px;
+  padding: 10px 20px 10px 5px;
+}
+header ul li.me a i{
+  height: 30px;
+  width: 30px;
+  color: #4d7388;
+  background: #fff;
+  margin-right: 20px;
+  border-radius: 4px;
+  padding: 5px;
 }
 .content-page {
   margin-top: 60px;
@@ -128,6 +177,8 @@ header ul li {
   display: inline-block;
   float: left;
   width: 480px;
+  background-color: #043b5a;
+  overflow: scroll;
   height: 100%;
 }
 .content-main{
@@ -136,4 +187,58 @@ header ul li {
   background: red;
       height: 100%;
   width: calc(100% - 480px);
+}
+
+
+.media {
+  padding: 20px 15px;
+}
+.media-left, .media>.pull-left {
+  padding-right: 15px;
+}
+.media-object {
+  display: block;
+}
+.media-left img {
+  width: 45px;
+  border-radius: 3px;
+  height: 45px;
+  vertical-align: middle;
+}
+.media-body, .media-left, .media-right {
+  display: table-cell;
+  vertical-align: top;
+}
+.media-heading {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+}
+.media-body, .media-left, .media-right {
+  display: table-cell;
+  vertical-align: top;
+}
+.media-body {
+  width: 10000px;
+}
+.media, .media-body {
+  overflow: hidden;
+  zoom: 1;
+}
+.media-body time {
+  font-size: 12px;
+  color: #fff;
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+}
+.media-body p{
+font-size:14px;
+  line-height: 16px;
+  color:#dddddd
+}
+.media.non-read{
+  background-color: #084365;
 }

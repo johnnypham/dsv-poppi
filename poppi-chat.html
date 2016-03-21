@@ -5,95 +5,200 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>POPPI CHAT</title>
+  <title>Poppi chat</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700&subset=latin,vietnamese,latin-ext,greek' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/fonts.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!--Css Tabs-->
+  <link rel="stylesheet" href="css/jquery-ui.css">
+
 
 </head>
 
 <body>
-  <div class="poppi-chat">
-    <div class="header">
-      <header>
-        <img src="images/logo.svg" width="40px" height="40px" alt="logo poppi" />
-        <ul>
-          <li class="me">
-            <a href="#">
-              <i class=""></i>
-              <span>Me </span>
-              <number>(2)</number>
-            </a>
-          </li>
-          <li class="me">
-            <a href="#">
-              <i class=""></i>
-              <span>Unassigned </span>
-              <number>(3)</number>
-            </a>
-          </li>
-          <li class="me">
-            <a href="#">
-              <i class=""></i>
-              <span>Members </span>
-              <number>(3)</number>
-            </a>
-          </li>
-          <li class="me">
-            <a href="#">
-              <i class=""></i>
-              <span>Team </span>
-              <number>(3)</number>
-            </a>
-          </li>
-        </ul>
-      </header>
-    </div>
-    <div class="sidebar-left">
-      <ul class="menu-left">
-        <li>
-          <a href="#">
-            <i class="icon-icon-notification"></i>
-            <span>Notification
-              <span>
-          </a>
-        </li>
-        <li>
+<div class="poppi-chat">
+  <div class="header">
+    <header>
+      <img src="images/logo.png"  alt="logo poppi"/>
+      <ul>
+        <li class="me">
           <a href="#">
             <i class="icon-circle"></i>
-            <span>People
-              <span>
+            <span>Me </span>
+            <number>(2)</number>
           </a>
         </li>
-        <li>
+        <li class="">
           <a href="#">
-            <i class="icon-interface"></i>
-            <span>Conversations
-              <span>
+            <span>Unassigned </span>
+            <number>(3)</number>
           </a>
         </li>
-        <li>
+        <li class="">
           <a href="#">
-            <i class="icon-icon-setting"></i>
-            <span>App setting
-              <span>
+            <i class=""></i>
+            <span>Members </span>
+            <number>(3)</number>
+          </a>
+        </li>
+        <li class="">
+          <a href="#">
+            <i class=""></i>
+            <span>Team </span>
+            <number>(3)</number>
           </a>
         </li>
       </ul>
-      <a href="" class="show-hide-nav">
-        <i class="icon-arrows"></i>
-      </a>
-      </nav>
-    </div>
-    <div class="content-page">
+    </header>
+  </div>
+  <div class="sidebar-left">
+    <ul class="menu-left">
+      <li>
+        <a href="#">
+          <i class="icon-icon-notification"></i>
+            <span>Notification
+              <span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="icon-circle"></i>
+            <span>People
+              <span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="icon-interface"></i>
+            <span>Conversations
+              <span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="icon-icon-setting"></i>
+            <span>App setting
+              <span>
+        </a>
+      </li>
+    </ul>
+    <a href="" class="show-hide-nav">
+      <i class="icon-arrows"></i>
+    </a>
+    </nav>
+  </div>
+  <div class="content-page">
+    <div class="content-left">
+      <div id="infoUser-tabs">
+        <ul>
+          <li><a href="#tabs-open">OPEN
+            <number>(3)</number>
+          </a></li>
+          <li><a href="#tabs-closed">CLOSED
+            <number>(3)</number>
+          </a></li>
+        </ul>
+        <div id="tabs-open">
+          <div class="media">
+            <div class="media-left">
+              <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64"
+                                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTM5OWNhZWZkMCB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1Mzk5Y2FlZmQwIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4="
+                                data-holder-rendered="true"> </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Hieupham84vn@gmail.com</h4>
+              <time>2 days</time>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+            </div>
+          </div>
+          <div class="media non-read">
+            <div class="media-left">
+              <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64"
+                                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTM5OWNhZWZkMCB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1Mzk5Y2FlZmQwIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4="
+                                data-holder-rendered="true"> </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Hieupham84vn@gmail.com</h4>
+              <time>2 days</time>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-left">
+              <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64"
+                                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTM5OWNhZWZkMCB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1Mzk5Y2FlZmQwIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4="
+                                data-holder-rendered="true"> </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Hieupham84vn@gmail.com</h4>
+              <time>2 days</time>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-left">
+              <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64"
+                                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTM5OWNhZWZkMCB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1Mzk5Y2FlZmQwIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4="
+                                data-holder-rendered="true"> </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Hieupham84vn@gmail.com</h4>
+              <time>2 days</time>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+            </div>
+          </div>
+          <div class="media non-read">
+            <div class="media-left">
+              <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64"
+                                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTM5OWNhZWZkMCB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1Mzk5Y2FlZmQwIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4="
+                                data-holder-rendered="true"> </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Hieupham84vn@gmail.com</h4>
+              <time>2 days</time>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-left">
+              <a href="#"> <img class="media-object" data-src="holder.js/64x64" alt="64x64"
+                                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTM5OWNhZWZkMCB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1Mzk5Y2FlZmQwIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4="
+                                data-holder-rendered="true"> </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Hieupham84vn@gmail.com</h4>
+              <time>2 days</time>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+            </div>
+          </div>
+        </div>
+        <div id="tabs-closed">
+          <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc.
+            Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut
+            tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam.
+            Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc.
+            Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat,
+            tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris
+            consectetur tortor et purus.</p>
+        </div>
 
-        <div class="content-left">
-        </div>
-        <div class="content-main">
-        </div>
+      </div>
+    </div>
+    <div class="content-main">
     </div>
   </div>
+</div>
 
+<!--Add jQueryTabs-->
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script>
+  $(document).ready(function () {
+    $("#infoUser-tabs").tabs();
+  });
 
+</script>
 </body>
 
 </html>

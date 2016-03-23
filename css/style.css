@@ -60,11 +60,20 @@ html, body, .poppi-chat,.content-page {
   height: 100%;
   position: fixed;
   top: 0px;
+  z-index: 2;
   left: 0px;
+  -webkit-transition: width ease-out .5s;
+  -moz-transition: width  ease-out .5s;
+  -o-transition: width  ease-out .5s;
+  transition: width  ease-out .5s;
   background: #075887;
 }
-.poppi-chat .sidebar-left.active {
-  width: 280px;
+.poppi-chat .sidebar-left.navActive {
+  width: 180px;
+  -webkit-transition: width ease-out .5s;
+  -moz-transition: width  ease-out .5s;
+  -o-transition: width  ease-out .5s;
+  transition: width  ease-out .5s;
 }
 .menu-left li {
   display: inline-block;
@@ -87,6 +96,20 @@ html, body, .poppi-chat,.content-page {
 }
 .poppi-chat .sidebar-left span {
   display: none;
+  /*visibility: hidden;*/
+  /*opacity: 0;*/
+  /*transition: visibility 0s, opacity 2s linear;*/
+}
+.poppi-chat .sidebar-left.navActive span{
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 14px;
+  color: #fff;
+  margin-left: 10px;
+  /*visibility: visible;*/
+  /*opacity: 1;*/
+  /*transition: visibility 2s, opacity 2s linear;*/
+
 }
 .poppi-chat .sidebar-left.active li a span {
   color: #fff;
@@ -102,6 +125,17 @@ html, body, .poppi-chat,.content-page {
   float: left;
   height: 13px;
   width: 85px;
+  -webkit-transition: width ease-out .5s;
+  -moz-transition: width  ease-out .5s;
+  -o-transition: width  ease-out .5s;
+  transition: width  ease-out .5s;
+}
+.sidebar-left .show-hide-nav.navActive{
+  width: 180px;
+  -webkit-transition: width ease-out .5s;
+  -moz-transition: width  ease-out .5s;
+  -o-transition: width  ease-out .5s;
+  transition: width  ease-out .5s;
 }
 .sidebar-left .show-hide-nav:hover {
   background: #084365;
@@ -188,11 +222,10 @@ header ul li.me a i{
 .content-main{
   display: inline-block;
   overflow-y: scroll;
-  padding: 50px 0px;
   float: left;
   background: #ebebeb;
-      height: calc(100% - 100px);
-  width: calc(100% - 480px);
+  height: calc(100% - 240px);
+  width: calc(100% - 565px);
 }
 
 
@@ -324,7 +357,7 @@ color:#212121;
 }
 .actionChat {
   display: inline-block;
-  width: 100%;
+  width:calc(100% - 565px);
   background: #fff;
   z-index: 1;
   position: fixed;
@@ -346,7 +379,7 @@ color:#212121;
 .chatNote ul li a{
   color:#a6a6a6;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
 }
 .chatNote ul li.active a{
   color:#1074ae;
@@ -355,19 +388,32 @@ color:#212121;
   display: inline-block;
   width: 100%;
 }
+.chatNote ul li.active{
+  position: relative;
+}
+.chatNote ul li.active:before{
+  content: "";
+  width: 50px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  border-top: 2px solid #1074ae;
+  left: calc(50% - 25px);
+  top: 25px;
+}
 .text-reply textarea{
   width: 100%;
+  font-size: 13px;
   border: none;
   height: 40px;
-  text-indent: 15px;
-  padding: 10px 0px;
+  padding: 10px;
   resize: none;
 }
 .iconAction ul li {
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 15px;
   float: left;
-  padding: 0 10px;
+  padding: 0 5px;
 }
 .iconAction ul{
   display: inline-block;
@@ -381,4 +427,77 @@ color:#212121;
 }
 .text-reply textarea:focus{
   outline: none;
+}
+.chatNote ul li.right{
+  float: right;
+  margin-right: 5px;
+}
+
+.iconAction  ul li.right{
+  float: right;
+  margin-right: 5px;
+}
+.actionReply{
+  margin-right: 5px;
+  width: 100px;
+  height: 32px;
+  border: none;
+  background: #1074ae;
+  cursor: pointer;
+  color: #fff;
+}
+
+.info-user-chat .left-user,
+.info-user-chat .center-user,
+.info-user-chat .right-user{
+  width: 33.333%;
+  display: inline-block;
+  float: left;
+}
+.info-user-chat .left-user img{
+  margin-left: 15px;
+  width: 30px;
+  height: 30px;
+  float: left;
+}
+.info-user-chat{
+  display: inline-block;
+  width: 100%;
+  background: #fff;
+  padding: 10px 0px;
+
+}
+.left-user a span{
+  margin-left: 10px;
+  top: 5px;
+  font-size: 14px;
+  position: relative;
+  color: #818181;
+}
+.left-user a i{
+  position: relative;
+  top: 5px;
+  margin-left: 8px;
+}
+.center-user{
+  text-align: center;
+}
+.center-user a{
+  top: 5px;
+  font-size: 14px;
+  position: relative;
+  color: #1074ae;
+}
+.right-user{
+  text-align: right;
+}
+.right-user a span{
+  margin-left: 8px;
+}
+.right-user a{
+  top: 5px;
+  margin-right: 15px;
+  font-size: 14px;
+  position: relative;
+  color: #1074ae;
 }

@@ -5,4 +5,8 @@ $(document).ready(function () {
 		$(this).toggleClass( "navActive" );
 		$('.sidebar-left').toggleClass( "navActive" );
 	});
+	$( "#infoUser-Show" ).click(function(event) {
+		event.preventDefault();
+		$('#toggleUser').toggleClass( "fadeInDown" );
+	});
 });
